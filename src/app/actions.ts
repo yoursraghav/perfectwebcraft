@@ -63,7 +63,7 @@ export async function submitLeadForm(
     return {
       success: false,
       message:
-        'Unable to submit at this time. Please try again or email us directly at hello@perfectwebcraft.com.',
+        'Unable to submit at this time. Please try again or email us directly at perfectwebcraftteam@gmail.com.',
     }
   }
 }

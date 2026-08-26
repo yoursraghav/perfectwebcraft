@@ -31,10 +31,12 @@ export default function ContactPage() {
                       Direct Email
                     </div>
                     <a
-                      href="mailto:hello@perfectwebcraft.com"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=perfectwebcraftteam@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="mt-1 block text-sm font-semibold text-red-600 hover:text-black transition"
                     >
-                      hello@perfectwebcraft.com
+                      perfectwebcraftteam@gmail.com
                     </a>
                   </div>
 

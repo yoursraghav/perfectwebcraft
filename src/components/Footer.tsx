@@ -43,10 +43,12 @@ export function Footer() {
               <span className="font-['Inter',sans-serif] text-xs text-black font-medium">HQ: India &amp; Global Studio</span>
             </div>
             <a
-              href="mailto:hello@perfectwebcraft.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=perfectwebcraftteam@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-4 inline-block font-['Space_Grotesk',sans-serif] text-xs font-semibold text-red-600 transition hover:text-black"
             >
-              hello@perfectwebcraft.com
+              perfectwebcraftteam@gmail.com
             </a>
           </div>
 
