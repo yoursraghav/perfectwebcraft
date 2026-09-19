@@ -29,11 +29,15 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Perfect Webcraft | Modern Web Design & Engineering Studio',
+  title: 'Perfect Web Craft | Modern Web Design & Engineering Studio',
   description:
     'Bespoke digital product design, web applications, and high-performance digital platforms for thoughtful brands.',
+  icons: {
+    icon: '/logomain.png',
+    apple: '/logomain.png',
+  },
   openGraph: {
-    title: 'Perfect Webcraft | Modern Web Design & Engineering Studio',
+    title: 'Perfect Web Craft | Modern Web Design & Engineering Studio',
     description:
       'Bespoke digital product design, web applications, and high-performance digital platforms for thoughtful brands.',
     type: 'website',

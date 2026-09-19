@@ -3,12 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
-const metrics = [
-  { label: 'Avg. PageSpeed Score', value: '99/100' },
-  { label: 'Production Uptime', value: '99.99%' },
-  { label: 'Client Retention', value: '0%' },
-  { label: 'Average Turnaround', value: '< 14 Days' },
-]
+
 
 const targetText = 'PerfectWebCraft'
 const totalDurationMs = 3000
@@ -69,23 +64,6 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="hero-metrics-reveal relative z-10 mx-auto w-full max-w-6xl px-6 pb-12 lg:px-8">
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-5">
-          {metrics.map((item) => (
-            <div
-              key={item.label}
-              className="rounded-2xl border border-slate-200 bg-white p-5 text-center transition hover:border-red-500/50 hover:shadow-md"
-            >
-              <div className="font-['Space_Grotesk',sans-serif] text-2xl font-bold tracking-tight text-red-600 sm:text-3xl">
-                {item.value}
-              </div>
-              <div className="mt-1.5 font-['Inter',sans-serif] text-xs font-semibold text-slate-700">
-                {item.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
     </section>
   )
 }

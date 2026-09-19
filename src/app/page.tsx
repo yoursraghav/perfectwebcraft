@@ -6,16 +6,7 @@ import { Portfolio } from '@/components/Portfolio'
 import { LeadForm } from '@/components/LeadForm'
 import { Footer } from '@/components/Footer'
 
-const stackBadges = [
-  'Next.js 16',
-  'TypeScript',
-  'Tailwind CSS',
-  'PostgreSQL',
-  'Prisma ORM',
-  'Server Actions',
-  'Figma Systems',
-  'Cloud Infrastructure',
-]
+
 
 const processSteps = [
   {
@@ -45,10 +36,7 @@ const processSteps = [
 ]
 
 const trustItems = [
-  { number: '0', label: 'Projects Delivered' },
-  { number: '0%', label: 'Client Retention' },
-  { number: '< 14 Days', label: 'Avg. Delivery Time' },
-  { number: '₹0', label: 'Hidden Fees' },
+  { number: '30 Days', label: 'Avg. Delivery Time' },
 ]
 
 export default function HomePage() {
@@ -60,29 +48,6 @@ export default function HomePage() {
       <main className="flex-1">
         <Hero />
 
-        <section
-          id="stack"
-          className="border-b border-slate-200 bg-slate-50 py-6"
-          aria-label="Technology stack"
-        >
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="flex flex-col items-center justify-between gap-5 md:flex-row">
-              <span className="shrink-0 font-['Space_Grotesk',sans-serif] text-xs font-bold uppercase tracking-widest text-slate-600">
-                Built With Modern Standards:
-              </span>
-              <div className="flex flex-wrap items-center justify-center gap-2">
-                {stackBadges.map((badge) => (
-                  <span
-                    key={badge}
-                    className="rounded-full border border-slate-200 bg-white px-4 py-1 font-['Inter',sans-serif] text-xs text-slate-800 shadow-2xs hover:border-red-600 transition-colors"
-                  >
-                    {badge}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
 
         <Services />
 
@@ -92,11 +57,11 @@ export default function HomePage() {
           aria-label="Trust metrics"
         >
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="grid grid-cols-2 gap-px bg-slate-200 rounded-2xl overflow-hidden sm:grid-cols-4 shadow-sm">
+            <div className="flex justify-center">
               {trustItems.map((item) => (
                 <div
                   key={item.label}
-                  className="bg-white px-6 py-8 text-center sm:px-8"
+                  className="rounded-2xl border border-slate-200 bg-white px-16 py-8 text-center shadow-sm"
                 >
                   <div className="font-['Space_Grotesk',sans-serif] text-3xl font-bold text-red-600 sm:text-4xl">
                     {item.number}
