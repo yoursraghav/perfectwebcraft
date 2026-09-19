@@ -29,7 +29,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Perfect Web Craft | Modern Web Design & Engineering Studio',
+  title: 'Perfect Web Craft',
   description:
     'Bespoke digital product design, web applications, and high-performance digital platforms for thoughtful brands.',
   icons: {
