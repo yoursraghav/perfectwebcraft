@@ -93,19 +93,19 @@ export function Services() {
                   </div>
                   {e.featured && <Badge tone="light">Most chosen</Badge>}
                 </div>
-                <p className="mt-7 text-[clamp(1.6rem,1.2rem+1.3vw,2.3rem)] leading-none tracking-[-0.05em] tabular-nums">{e.price}</p>
+                <p className="mt-7 text-[1.6rem] leading-none tracking-[-0.05em] tabular-nums md:text-[2.3rem] lg:text-[1.7rem] xl:text-[2.2rem]">{e.price}</p>
                 <p className={cx('mt-3 text-sm', e.featured ? 'text-night-muted' : 'text-muted')}>One-off, fixed price</p>
-                <p className={cx('mt-5', e.featured ? 'text-white/90' : 'text-ink-2')}>{e.lead}</p>
-                <dl className={cx('mt-6 grid gap-3.5 border-t pt-5 text-[14px]', e.featured ? 'border-white/20' : 'border-line')}>
+                <p className={cx('mt-5 md:max-w-[58ch] lg:max-w-none', e.featured ? 'text-white/90' : 'text-ink-2')}>{e.lead}</p>
+                <dl className={cx('mt-6 grid gap-3.5 border-t pt-5 text-[14px] md:grid-cols-2 md:gap-x-10 md:gap-y-4 lg:grid-cols-1 lg:gap-x-0', e.featured ? 'border-white/20' : 'border-line')}>
                   {e.specs.map((spec) => (
                     <div key={spec.label}>
                       <dt className={cx('caps text-[11px]', e.featured ? 'text-night-muted' : 'text-muted')}>{spec.label}</dt>
-                      <dd className="mt-1 leading-snug">{spec.value}</dd>
+                      <dd className="mt-1 leading-snug md:max-w-[38ch] lg:max-w-none">{spec.value}</dd>
                     </div>
                   ))}
                 </dl>
                 <div className="mt-auto pt-8">
-                  <ButtonLink to="/contact" variant={e.featured ? 'light' : 'outline'} className="w-full justify-center" iconRight={<ArrowRight className="size-4" />}>
+                  <ButtonLink to="/contact" variant={e.featured ? 'light' : 'outline'} className="w-full justify-center md:w-auto lg:w-full" iconRight={<ArrowRight className="size-4" />}>
                     Start with {e.name}
                   </ButtonLink>
                 </div>
@@ -113,7 +113,7 @@ export function Services() {
             </li>
           ))}
         </ul>
-        <p className="px-1 text-[13px] leading-relaxed text-muted">{PRICING_NOTE}</p>
+        <p className="max-w-[72ch] px-1 text-[13px] leading-relaxed text-muted">{PRICING_NOTE}</p>
       </section>
 
       <Card as="section" aria-labelledby="faq-title" className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[1fr_1.6fr]">
