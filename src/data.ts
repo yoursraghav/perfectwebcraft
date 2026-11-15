@@ -393,7 +393,7 @@ export const STUDIO = {
     { name: 'Ananya Iyer', role: 'Design Director' },
     { name: 'Kabir Mehta', role: 'Lead Engineer' },
     { name: 'Priya Nair', role: 'Head of Strategy' },
-    { name: 'Arjun Deshpande', role: 'Designer' },
+    { name: 'Arjun Deshpande', role: 'Motion Designer' },
     { name: 'Sneha Kulkarni', role: 'Studio Manager' },
   ],
   awards: [
@@ -444,7 +444,17 @@ export const ROLES: Role[] = [
     type: 'Full time',
     summary: 'Build the sites we design in React and TypeScript, and own performance, accessibility and the handover.',
     responsibilities: ['Build marketing sites in React and Vite', 'Wire CMS models and form endpoints', 'Own performance and accessibility budgets', 'Pair with designers from the first route'],
-    requirements: ['Three or more years with React and TypeScript', 'Careful CSS and an eye for detail', 'Comfortable with Node and CI', 'Clear writing'],
+    requirements: ['Three or more years with React and TypeScript', 'Careful CSS and an eye for motion', 'Comfortable with Node and CI', 'Clear writing'],
+  },
+  {
+    slug: '3d-motion-designer',
+    title: '3D & Motion Designer',
+    team: 'Motion',
+    location: 'Mumbai, hybrid',
+    type: 'Full time',
+    summary: 'Make the iridescent objects, product renders and logo animations our clients are known for.',
+    responsibilities: ['Model, light and render in Blender or Cinema 4D', 'Animate logos and interfaces', 'Produce launch films', 'Build reusable asset kits'],
+    requirements: ['A reel that shows taste and range', 'Strong lighting and materials', 'After Effects and one 3D tool', 'Real-time experience is a plus'],
   },
   {
     slug: 'new-business-lead',
