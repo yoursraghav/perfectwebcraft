@@ -6,7 +6,7 @@ import { Card } from '../components/Card'
 import { Accordion } from '../components/Content'
 import { Holo } from '../components/Holo'
 import { PageHero } from '../components/Nav'
-import { ENGAGEMENTS, FAQ, PROCESS, SERVICES } from '../data'
+import { ENGAGEMENTS, FAQ, PRICING_NOTE, PROCESS, SERVICES } from '../data'
 import { cx } from '../lib/cx'
 import { useDocumentTitle } from '../lib/storage'
 
@@ -16,8 +16,8 @@ export function Services() {
     <div className="grid gap-2 p-2">
       <PageHero
         title={['What', 'we do']}
-        eyebrow="Five disciplines, one studio"
-        intro="Brand, digital, motion and campaigns under one roof, so the logo, the app and the launch film come from the same idea."
+        eyebrow="Three disciplines, one studio"
+        intro="Brand, web and product design under one roof, so the mark, the site and the interface come from the same idea."
         art={<Holo kind="sphere" motion />}
         aside={
           <ul className="mt-6 flex flex-wrap gap-1.5">
@@ -79,35 +79,41 @@ export function Services() {
 
       <section aria-labelledby="engage-title" className="grid gap-2">
         <Card className="grid gap-4 p-6 sm:p-8 md:grid-cols-[1fr_auto] md:items-end">
-          <p className="order-2 max-w-sm text-muted md:order-1">Three ways to work together. Every estimate is fixed before we start.</p>
-          <Title id="engage-title" lines={['Ways to', 'engage']} className="order-1 md:order-2" />
+          <p className="order-2 max-w-sm text-muted md:order-1">Three packages, each fixed-scope. Pick the one that matches where your business is; we confirm the exact price after the brief.</p>
+          <Title id="engage-title" lines={['Packages', 'and prices']} className="order-1 md:order-2" />
         </Card>
         <ul className="grid gap-2 lg:grid-cols-3">
           {ENGAGEMENTS.map((e) => (
             <li key={e.name}>
               <Card tone={e.featured ? 'night' : 'white'} className="flex h-full flex-col p-6 sm:p-8">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-medium tracking-[-0.03em] uppercase">{e.name}</h3>
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <h3 className="text-2xl font-medium tracking-[-0.03em] uppercase">{e.name}</h3>
+                    <p className={cx('caps mt-1.5 text-[13px]', e.featured ? 'text-night-muted' : 'text-muted')}>{e.tier}</p>
+                  </div>
                   {e.featured && <Badge tone="light">Most chosen</Badge>}
                 </div>
-                <p className="mt-8 text-[clamp(2rem,1.6rem+1.2vw,2.8rem)] leading-none tracking-[-0.05em]">{e.price}</p>
-                <p className={cx('mt-2 text-sm', e.featured ? 'text-night-muted' : 'text-muted')}>{e.length}</p>
-                <p className={cx('mt-6', e.featured ? 'text-white/90' : 'text-ink-2')}>{e.body}</p>
-                <ul className="mt-6 mb-8 grid gap-2.5 text-[15px]">
-                  {e.points.map((pt) => (
-                    <li key={pt} className="flex items-start gap-2.5">
-                      <Check className={cx('mt-0.5 size-4 shrink-0', e.featured ? 'text-violet-light' : 'text-violet')} aria-hidden />
-                      {pt}
-                    </li>
+                <p className="mt-7 text-[clamp(1.6rem,1.2rem+1.3vw,2.3rem)] leading-none tracking-[-0.05em] tabular-nums">{e.price}</p>
+                <p className={cx('mt-3 text-sm', e.featured ? 'text-night-muted' : 'text-muted')}>One-off, fixed price</p>
+                <p className={cx('mt-5', e.featured ? 'text-white/90' : 'text-ink-2')}>{e.lead}</p>
+                <dl className={cx('mt-6 grid gap-3.5 border-t pt-5 text-[14px]', e.featured ? 'border-white/20' : 'border-line')}>
+                  {e.specs.map((spec) => (
+                    <div key={spec.label}>
+                      <dt className={cx('caps text-[11px]', e.featured ? 'text-night-muted' : 'text-muted')}>{spec.label}</dt>
+                      <dd className="mt-1 leading-snug">{spec.value}</dd>
+                    </div>
                   ))}
-                </ul>
-                <ButtonLink to="/contact" variant={e.featured ? 'light' : 'outline'} className="mt-auto" iconRight={<ArrowRight className="size-4" />}>
-                  Start with a {e.name.toLowerCase()}
-                </ButtonLink>
+                </dl>
+                <div className="mt-auto pt-8">
+                  <ButtonLink to="/contact" variant={e.featured ? 'light' : 'outline'} className="w-full justify-center" iconRight={<ArrowRight className="size-4" />}>
+                    Start with {e.name}
+                  </ButtonLink>
+                </div>
               </Card>
             </li>
           ))}
         </ul>
+        <p className="px-1 text-[13px] leading-relaxed text-muted">{PRICING_NOTE}</p>
       </section>
 
       <Card as="section" aria-labelledby="faq-title" className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[1fr_1.6fr]">

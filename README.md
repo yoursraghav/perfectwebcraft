@@ -11,8 +11,8 @@ call to action. Behind it is a complete site:
   client. Filters live in the URL, so a reload keeps them.
 - **Case study** (`/work/:slug`): overview, challenge and approach, results,
   gallery, client quote and the next project.
-- **Services** (`/services`): five disciplines with deliverables, the
-  four-step process, three ways to engage with starting prices, and an FAQ.
+- **Services** (`/services`): three disciplines with deliverables, the
+  four-step process, three fixed-price packages and an FAQ.
 - **Studio** (`/studio`): numbers, values, team, awards and clients.
 - **Careers** (`/careers`) and **role pages** (`/careers/:slug`) with an
   application form.

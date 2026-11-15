@@ -110,22 +110,6 @@ export const SERVICES: Service[] = [
     intro: 'Research, flows and interface design for products that have outgrown their first version. We test with real customers in Mumbai before a pixel is signed off.',
     deliverables: ['User research and interviews', 'Information architecture', 'Wireframes and flows', 'Interface design', 'Usability testing'],
   },
-  {
-    slug: 'motion-3d',
-    title: 'Motion & 3D',
-    short: 'Bringing brands to life in movement and depth',
-    art: 'sphere',
-    intro: 'Logo animation, product renders and short films for launches and paid social. The iridescent objects on this site are our house style; yours will be your own.',
-    deliverables: ['Logo and UI motion', '3D product renders', 'Launch films', 'Social content kits'],
-  },
-  {
-    slug: 'campaigns',
-    title: 'Campaigns & content',
-    short: 'Launching ideas people actually share',
-    art: 'knot',
-    intro: 'Launch campaigns across display, social and OTT, from the first idea to the final asset sizes, built to be reused every quarter.',
-    deliverables: ['Campaign concepts', 'Art direction', 'Digital and print', 'Social and paid assets'],
-  },
 ]
 
 export const APPROACH = [
@@ -142,18 +126,91 @@ export const PROCESS = [
   { step: '04', title: 'Deliver', body: 'Launch, a short handover session for your team, and 30 days of support after go-live.' },
 ]
 
-export const ENGAGEMENTS = [
-  { name: 'Sprint', price: 'From ₹1.5L', length: '2–3 weeks', body: 'A focused burst: a landing page, a logo refresh or a product concept.', points: ['One discipline', 'Two review rounds', 'Final files and handoff'] },
-  { name: 'Project', price: 'From ₹4L', length: '6–12 weeks', body: 'A full identity or website, from strategy through to launch.', points: ['Strategy and design routes', 'Weekly reviews', 'Design system or CMS', '30 days of launch support'], featured: true },
-  { name: 'Partnership', price: 'From ₹1.2L / month', length: 'Ongoing', body: 'A dedicated team that works as your in-house studio.', points: ['Reserved team capacity', 'Monthly planning', 'Priority turnaround'] },
+/** What each package includes, row by row. */
+export type Engagement = {
+  name: string
+  tier: string
+  price: string
+  lead: string
+  specs: { label: string; value: string }[]
+  featured?: boolean
+}
+
+const PAYMENT = '50% advance, 30% during the build, 20% after the site is deployed and online'
+
+export const ENGAGEMENTS: Engagement[] = [
+  {
+    name: 'Basic',
+    tier: 'Essential',
+    price: '₹35,000 – ₹45,000',
+    lead: 'An existing template, set up properly for your business: fast, clear and easy to run.',
+    specs: [
+      { label: 'Design', value: 'Existing template with limited customization' },
+      { label: 'Content', value: 'Client provided: text, service descriptions, logo and images' },
+      { label: 'Pages', value: 'Up to 5 pages' },
+      { label: 'Client intake', value: 'Basic contact form' },
+      { label: 'Customization', value: 'Limited template customization' },
+      { label: 'Branding', value: 'Existing layout, adjusted colours and logo' },
+      { label: 'Functionality', value: 'Responsive design, standard navigation, email notifications, basic SEO and Google Maps' },
+      { label: 'Client communication', value: 'Email enquiries, WhatsApp link and click-to-call' },
+      { label: 'Security', value: 'SSL / HTTPS and standard security configuration' },
+      { label: 'Best suited for', value: 'Individuals and small businesses going online for the first time' },
+      { label: 'Includes', value: 'Basic features only' },
+      { label: 'Payment schedule', value: PAYMENT },
+    ],
+  },
+  {
+    name: 'Moderate',
+    tier: 'Semi-custom',
+    price: '₹50,000 – ₹85,000',
+    lead: 'A semi-custom build: one of our designs bent around your brand, content and bookings.',
+    specs: [
+      { label: 'Design', value: 'Semi-custom UI: an existing design customized significantly in colours, fonts, sections and layout' },
+      { label: 'Content', value: 'AI-assisted drafts of pages like “About us”, reviewed and customized by our team; you approve' },
+      { label: 'Pages', value: 'Up to 15 pages' },
+      { label: 'Client intake', value: 'Advanced enquiry form and online appointment booking (Calendly / Acuity)' },
+      { label: 'Customization', value: 'Semi-custom design and branding' },
+      { label: 'Branding', value: 'Customized colours, fonts, sections and layout' },
+      { label: 'Functionality', value: 'Booking system, blog, search, automated emails and enhanced forms' },
+      { label: 'Client communication', value: 'Appointment and enquiry notifications, WhatsApp integration' },
+      { label: 'Security', value: 'Enhanced form protection and security configuration' },
+      { label: 'Best suited for', value: 'Growing businesses and multi-service teams' },
+      { label: 'Includes', value: 'Everything in Basic, plus Moderate features' },
+      { label: 'Payment schedule', value: PAYMENT },
+    ],
+    featured: true,
+  },
+  {
+    name: 'Professional',
+    tier: 'Bespoke',
+    price: '₹1,25,000 – ₹2,00,000',
+    lead: 'Fully bespoke: designed from scratch around your brand, with the systems to keep it growing.',
+    specs: [
+      { label: 'Design', value: '100% bespoke: designed from scratch around your brand and requirements' },
+      { label: 'Content', value: 'Human-written, professionally edited content; you approve' },
+      { label: 'Pages', value: 'Custom page structure within the agreed scope' },
+      { label: 'Client intake', value: 'Custom intake workflow and enquiry system' },
+      { label: 'Customization', value: 'Bespoke, based on agreed requirements' },
+      { label: 'Branding', value: 'Unique brand identity and design system' },
+      { label: 'Functionality', value: 'Custom workflows, automation, integrations and advanced functionality' },
+      { label: 'Client communication', value: 'AI chatbot for general enquiries, with clear limitations' },
+      { label: 'Security', value: 'Security tailored to the project, access controls and encrypted data handling where supported' },
+      { label: 'Best suited for', value: 'Established brands needing a tailored digital platform' },
+      { label: 'Includes', value: 'Everything in Basic and Moderate, plus Professional features' },
+      { label: 'Payment schedule', value: PAYMENT },
+    ],
+  },
 ]
+
+export const PRICING_NOTE =
+  'Prices are proposed package specifications. Domain, hosting, premium themes, booking tools and other third-party costs are identified separately in your quote. GST is charged extra.'
 
 export const FAQ = [
   { q: 'How soon can you start?', a: 'We usually start new projects three to five weeks after a brief is signed. Sprints can sometimes begin within a week.' },
   { q: 'Do you work with startups?', a: 'Yes. About half our clients are pre-seed to Series A. We launched in 2026 and have shipped twenty-eight sites since.' },
   { q: 'Who will I work with?', a: 'A creative director leads every project, with one designer and one engineer. You meet the whole team at kickoff and talk to them directly.' },
   { q: 'Do you build the websites too?', a: 'Yes. We design and build in React and TypeScript, deploy to Cloudflare, and hand over a repository your engineers can run. You own all of it.' },
-  { q: 'How do you price work?', a: 'Fixed price per phase, quoted after the discovery call. Retainers start at ₹1.2L a month. GST is charged extra, and we invoice 50% to start and 50% at launch.' },
+  { q: 'How do you price work?', a: 'Three fixed-scope packages: Basic from ₹35,000, Moderate from ₹50,000 and Professional from ₹1,25,000. GST is charged extra, and we invoice 50% to start, 30% during the build and 20% after launch.' },
   { q: 'Where are you based?', a: 'In Mumbai, working with clients across India and abroad. Most meetings happen on video; workshops happen at our studio in Lower Parel or at your office.' },
 ]
 
@@ -173,7 +230,7 @@ export type Project = {
   accent: string
 }
 
-export const DISCIPLINES = ['Branding', 'Digital', 'Motion', 'Campaign'] as const
+export const DISCIPLINES = ['Branding', 'Digital'] as const
 
 export const PROJECTS: Project[] = [
   {
@@ -200,10 +257,10 @@ export const PROJECTS: Project[] = [
     client: 'Nimbara',
     title: 'A brand that makes dashboards feel human',
     year: 2026,
-    disciplines: ['Branding', 'Motion'],
+    disciplines: ['Branding', 'Digital'],
     cover: 'aurora',
     gallery: ['aurora', 'nocturne'],
-    summary: 'Identity, motion system and marketing site for a retail analytics platform heading into its first raise.',
+    summary: 'Identity, design system and marketing site for a retail analytics platform heading into its first raise.',
     challenge: 'Nimbara had a strong product and a deck that looked like everyone else’s. Buyers could not tell what it did from the homepage, and the founders were two weeks from a fundraise.',
     approach: 'We built the brand around one idea, seeing the shelf through your customer’s eyes, and made an animated data form the mark. The marketing site went live ten days before the round.',
     results: [
@@ -238,7 +295,7 @@ export const PROJECTS: Project[] = [
     client: 'Vayu Outdoor',
     title: 'Colour-first campaign for monsoon gear',
     year: 2025,
-    disciplines: ['Campaign', 'Motion'],
+    disciplines: ['Branding', 'Digital'],
     cover: 'kite',
     gallery: ['kite', 'nocturne'],
     summary: 'A loud June campaign across display, social and OTT, built around a single colour.',
@@ -291,9 +348,9 @@ export const PROJECTS: Project[] = [
   {
     slug: 'trellis-labs',
     client: 'Trellis Labs',
-    title: 'Motion identity for a soil-health platform',
+    title: 'A visual system for a soil-health platform',
     year: 2024,
-    disciplines: ['Motion', 'Digital'],
+    disciplines: ['Digital', 'Branding'],
     cover: 'nocturne',
     gallery: ['nocturne', 'aurora'],
     summary: 'A visual system that turns field data into something a farmer and an investor can both read.',
@@ -336,7 +393,7 @@ export const STUDIO = {
     { name: 'Ananya Iyer', role: 'Design Director' },
     { name: 'Kabir Mehta', role: 'Lead Engineer' },
     { name: 'Priya Nair', role: 'Head of Strategy' },
-    { name: 'Arjun Deshpande', role: 'Motion Designer' },
+    { name: 'Arjun Deshpande', role: 'Designer' },
     { name: 'Sneha Kulkarni', role: 'Studio Manager' },
   ],
   awards: [
@@ -387,17 +444,7 @@ export const ROLES: Role[] = [
     type: 'Full time',
     summary: 'Build the sites we design in React and TypeScript, and own performance, accessibility and the handover.',
     responsibilities: ['Build marketing sites in React and Vite', 'Wire CMS models and form endpoints', 'Own performance and accessibility budgets', 'Pair with designers from the first route'],
-    requirements: ['Three or more years with React and TypeScript', 'Careful CSS and an eye for motion', 'Comfortable with Node and CI', 'Clear writing'],
-  },
-  {
-    slug: '3d-motion-designer',
-    title: '3D & Motion Designer',
-    team: 'Motion',
-    location: 'Mumbai, hybrid',
-    type: 'Full time',
-    summary: 'Make the iridescent objects, product renders and logo animations our clients are known for.',
-    responsibilities: ['Model, light and render in Blender or Cinema 4D', 'Animate logos and interfaces', 'Produce launch films', 'Build reusable asset kits'],
-    requirements: ['A reel that shows taste and range', 'Strong lighting and materials', 'After Effects and one 3D tool', 'Real-time experience is a plus'],
+    requirements: ['Three or more years with React and TypeScript', 'Careful CSS and an eye for detail', 'Comfortable with Node and CI', 'Clear writing'],
   },
   {
     slug: 'new-business-lead',
@@ -416,7 +463,7 @@ export const CONTACT = {
   intro: 'Three short steps. We read every brief ourselves and reply within two working days.',
   budgets: ['Under ₹1L', '₹1L–3L', '₹3L–6L', '₹6L+'] as const,
   timelines: ['As soon as possible', 'In 1–3 months', 'In 3–6 months', 'Just exploring'] as const,
-  services: ['Brand identity', 'Web & mobile', 'UX/UI', 'Motion & 3D', 'Campaign'] as const,
+  services: ['Brand identity', 'Web & mobile', 'UX/UI'] as const,
   steps: ['What you need', 'Budget and timing', 'About you'],
 }
 
